@@ -1,35 +1,26 @@
 {
-  "name": "vercel-openai",
+  "author": "Qiii",
+  "name": "vercel-ai-proxy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "next start"
   },
   "keywords": [
     "ChatGPT",
     "GPT",
+    "Gemini",
     "OpenAI",
     "Proxy"
   ],
-  "author": "Honye",
   "license": "MIT",
   "devDependencies": {
-    "@types/express": "^4.17.17",
     "@types/node": "^18.15.0",
-    "@types/uuid": "^9.0.1",
-    "express": "^4.18.2",
-    "http-proxy-middleware": "^2.0.6",
-    "uuid": "^9.0.0",
-    "vercel": "^28.16.15"
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "next": "^13.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.0.4"
+    "next": "latest"
   }
 }
