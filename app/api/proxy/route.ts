@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 
 export const runtime = 'edge';
 
@@ -21,14 +22,31 @@ export const POST = async (req: Request) => {
   url.host = GOOGLE_HOST
   url.pathname = url.pathname.replace('/api/proxy', '')
 
-  return fetch(
-    url,
-    {
-      method: req.method,
-      headers: req.headers,
-      body: req.body,
-      signal: req.signal,
-    }
-  )
+
+
+  const proxyUrl = `${GOOGLE_API_BASE_URL}/${path}`;
+  console.log(proxyUrl)
+
+  try {
+    const body = await req.text()
+    console.log(body)
+    return fetch(
+      proxyUrl,
+      {
+        method: req.method,
+        headers: req.headers,
+        body:body,
+        signal: req.signal,
+      }
+    )
+    // console.log(res)
+    // return NextResponse.next(res)
+  } catch (error) {
+    console.error(error)
+    return Response.json({ error: 'Error fetching data' }, { status: 500 });
+  }
+ 
+
+
 
 }
